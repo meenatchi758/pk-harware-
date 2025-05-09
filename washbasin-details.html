@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PK Hardware Jewelry Shop</title>
+    <link rel="icon" href="C:/Users/sriram.B/Downloads/image000.jpeg" type="image/x-icon">
+  <link rel="stylesheet" href="product-details.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap">
+      
+      <!-- Logo -->
+      <div class="d-flex align-items-center">
+        <img src="./images/image000.jpeg" alt="PK Hardware Logo" width="150" height="100">
+      </div>
+
+      <!-- Search Bar -->
+      <form class="search">
+        <input type="search" placeholder="Looking For">
+        <div class="icon1">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+      </form>
+
+      <!-- User Section -->
+      <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center me-3">
+          <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 39px; height: 39px;">N</div>
+          <div class="user-welcome ms-2">
+            <div>Welcome</div>
+            <strong>Nidhiekshha</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="container-fluid mt-2">
+      <nav class="nav justify-content-center">
+        <a class="nav-link" href="product about.html">About Us</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="sanitaryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sanitaryware
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="sanitaryDropdown">
+              <li><a class="dropdown-item" href="#">Wash Basins</a></li>
+              <li><a class="dropdown-item" href="#">Faucets & Taps</a></li>
+              <li><a class="dropdown-item" href="#">Showers & Bath Fittings</a></li>
+              <li><a class="dropdown-item" href="#">Bathtubs & Jacuzzi</a></li>
+          </ul>
+        </li>
+
+        <a class="nav-link" href="modular.html">Modular Kitchen</a>
+        <a class="nav-link" href="hardware.html">Hardware</a>
+        <a class="nav-link" href="product contact.html">Contact Us</a>
+        <a href="cart.html">
+        
+          <button class="cart-btn">🛒 Cart  <span id="cart-count">(0)</span></a>
+          </a>
+          </a>
+      </nav>
+    </div>
+
+  </div>
+
+  <br><br>
+
+  <!-- Product Details Section -->
+  <div class="container" id="productDetailsContainer">
+    <div class="product-image">
+      <img id="productImage" src="" alt="Product Image">
+    </div>
+    <div class="product-details">
+      <div id="productTitle" class="product-title"></div>
+
+      <div id="productPrice" class="price">
+        <span id="priceAmount">(Incl of all taxes)</span>
+      </div>
+
+      <div class="qty-select">
+        <label for="quantity">QTY:</label>
+        <input type="number" id="quantity" value="1" min="0" max="100">
+      </div>
+
+      <div class="delivery">
+        <input type="text" id="pincode" placeholder="Enter delivery pincode" maxlength="6">
+        <button id="checkPincodeBtn">CHECK</button>
+        <div id="deliveryStatus" class="delivery-text"></div>
+        <br>
+        <div class="delivery-text">Delivery by April 30, Wed by 9.00 A.M</div>
+    <!-- Closing .delivery div -->
+
+      <div class="buttons mt-3">
+        <button class="add-to-cart" id="addToCartBtn">
+          <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Add to Cart" width="20" style="vertical-align: middle; margin-right: 8px;"> Add to Cart
+        </button>
+        <a href="card.html"><button class="buy-now" id="buyNowBtn">
+          <img src="https://cdn-icons-png.flaticon.com/512/263/263105.png" alt="Buy Now" width="20" style="vertical-align: middle; margin-right: 8px;"> Buy Now
+        </a></button>
+      </div>
+      </div>
+
+      <div class="icons mt-4">
+        <div class="icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/3106/3106893.png" alt="Pay on delivery">
+          <div>Pay on delivery</div>
+        </div>
+        <div class="icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Replacement">
+          <div>10 days Replacement</div>
+        </div>
+        <div class="icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/190/190422.png" alt="Warranty">
+          <div>10 year warranty</div>
+        </div>
+        <div class="icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Top Brand">
+          <div>Top Brand</div>
+        </div>
+        <div class="icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Secure Transaction">
+          <div>Secure Transaction</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script>
+    // Get the product ID from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+
+    const productDetails = {
+  "1": {
+    "name": "Ruhe®23x18x5 Inches Ara Wall Hung Wash Basin White",
+    "price": "₹2499",
+    "description": "A stylish wall-hung wash basin for your bathroom.",
+    "image": "./images/image101.png",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=1"
+  },
+  "2": {
+    "name": "BonKaso Polished Design Ceramica Bathroom Basin",
+    "price": "₹3499",
+    "description": "Polished ceramic bathroom basin with sleek design.",
+    "image": "./images/image102.jpg",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=2"
+  },
+  "3": {
+    "name": "Ruhe Jade Glass Green Translucent Round Tablet",
+    "price": "₹766",
+    "description": "Translucent jade glass tablet for your bathroom.",
+    "image": "./images/image104.jpg",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=3"
+  },
+  "4": {
+    "name": "BonKaso Polished Design Ceramica Bathroom Basin",
+    "price": "₹1799",
+    "description": "Elegant polished ceramic bathroom basin.",
+    "image": "./images/image106.jpg",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=4"
+  },
+  "5": {
+    "name": "Lifelong Wash Basin for Bathroom - Tabletop Washbasin",
+    "price": "₹1498",
+    "description": "A durable tabletop wash basin for modern bathrooms.",
+    "image": "./images/image107.png",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=5"
+  },
+  "6": {
+    "name": "BonKaso Polished Design Ceramica Bathroom Basin",
+    "price": "₹2599",
+    "description": "A beautifully designed bathroom basin with polished finish.",
+    "image": "./images/image108.jpg",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=6"
+  },
+  "7": {
+    "name": "Ruhe Jade Glass Green Translucent Round Tablet",
+    "price": "₹1699",
+    "description": "Green translucent round tablet wash basin for a unique bathroom touch.",
+    "image": "./images/image112.avif",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=7"
+  },
+  "8": {
+    "name": "BonKaso Polished Design Ceramica Bathroom Basin",
+    "price": "₹2769",
+    "description": "A premium polished ceramic basin for luxurious bathrooms.",
+    "image": "./images/image113.jpg",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=8"
+  },
+  "9": {
+    "name": "Plantex Ceramic Tabletop Washbasin/Tabletop Marble",
+    "price": "₹1599",
+    "description": "A stylish ceramic tabletop washbasin made with high-quality marble.",
+    "image": "./images/image114.avif",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=9"
+  },
+  "10": {
+    "name": "Ruhe® Blaze Countertop Ceramic Wash Basin",
+    "price": "₹2816",
+    "description": "A modern countertop ceramic wash basin for your bathroom.",
+    "image": "./images/image115.jpg",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=10"
+  },
+  "11": {
+    "name": "Plantex Ceramic Wash Basin Bathroom/Square",
+    "price": "₹749",
+    "description": "A square-shaped ceramic wash basin for bathrooms.",
+    "image": "./images/image118.jpg",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=11"
+  },
+  "12": {
+    "name": "Nerobi Designer Ceramic of Table Top Wash Basin",
+    "price": "₹249",
+    "description": "A sleek ceramic table top wash basin for your bathroom.",
+    "image": "./images/image120.jpg",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=12"
+  },
+  "13": {
+    "name": "Remotion Wooden Base Design Table Top Vessel Sink/Over",
+    "price": "₹3499",
+    "description": "A unique table top vessel sink with a wooden base design.",
+    "image": "./images/image121.jpg",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=13"
+  },
+  "14": {
+    "name": "HISRE Table Top Wash Basin For Bathroom | Over",
+    "price": "₹5099",
+    "description": "An over-the-counter table top wash basin for your bathroom.",
+    "image": "./images/image122.jpg",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=14"
+  },
+  "15": {
+    "name": "OSOSAM Premium Ceramic Tabletop Wash",
+    "price": "₹2499",
+    "description": "Premium ceramic tabletop wash basin.",
+    "image": "./images/image123.webp",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=15"
+  },
+  "16": {
+    "name": "NEXIS Designer Ceramic Table Top Wash Basin",
+    "price": "₹2799",
+    "description": "A designer ceramic table top wash basin for modern bathrooms.",
+    "image": "./images/image124.jpg",
+    "button": "Add to Cart",
+    "link": "washbasin-details.html?id=16"
+  }
+};
+
+
+
+
+    const product = productDetails[productId];
+
+    if (product) {
+      document.getElementById("productImage").src = product.image;
+      document.getElementById("productImage").alt = `Product image - ${product.name}`;
+      document.getElementById("productTitle").innerText = product.name;
+      document.getElementById("priceAmount").innerText = product.price;
+    } else {
+      document.getElementById("productDetailsContainer").innerHTML = "<p>Sorry, the product you're looking for doesn't exist.</p>";
+    }
+
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const buyNowBtn = document.getElementById('buyNowBtn');
+    const checkPincodeBtn = document.getElementById('checkPincodeBtn');
+    const quantityInput = document.getElementById('quantity');
+    const pincodeInput = document.getElementById('pincode');
+    const deliveryStatus = document.getElementById('deliveryStatus');
+
+    function validateQuantity() {
+      const qty = parseInt(quantityInput.value);
+      if (isNaN(qty) || qty < 1 || qty > 100) {
+        alert("Please enter quantity between 1 and 100!");
+        return false;
+      }
+      return true;
+    }
+
+    addToCartBtn.addEventListener('click', function() {
+      if (validateQuantity()) {
+        const qty = parseInt(quantityInput.value);
+        alert(qty + (qty === 1 ? " item added to cart!" : " items added to cart!"));
+      }
+    });
+
+    buyNowBtn.addEventListener('click', function() {
+      if (validateQuantity()) {
+        const qty = parseInt(quantityInput.value);
+        alert("Proceeding to buy " + qty + " item(s)!");
+      }
+    });
+
+    checkPincodeBtn.addEventListener('click', function() {
+      const pincode = pincodeInput.value.trim();
+      if (pincode.length === 6 && /^\d+$/.test(pincode)) {
+        deliveryStatus.textContent = "✅ Delivery available!";
+        deliveryStatus.style.color = "green";
+      } else {
+        deliveryStatus.textContent = "❌ Invalid pincode.";
+        deliveryStatus.style.color = "red";
+      }
+    });
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <br><br><br>
+
+  <div class="about-item">
+    <h2>About this item</h2>
+
+    <p><strong>MODERN DESIGN:</strong> The RUHE Ara WallHung WashBasin features a sleek, contemporary design with curved edges, adding a touch of elegance to any bathroom decor.</p>
+    <p><strong>EASY TO CLEAN & HYGIENIC:</strong> Made of high-quality ceramic with a non-porous surface, this wash basin is naturally hygienic and easy to clean, resisting bacterial growth.</p>
+    <p><strong>DURABLE & LONG-LASTING:</strong> The ceramic material is heat resistant, scratch-resistant, and chip-resistant, ensuring long-lasting durability and performance.</p>
+    <p><strong>GLOSSY FINISH:</strong> The wash basin's glossy glaze finish provides a smooth, lustrous look that resists stains and maintains its shine over time.</p>
+    <p><strong>SPACE-SAVING INSTALLATION:</strong> Designed for wall-mounted installation, this wash basin saves space and is perfect for smaller bathrooms or powder rooms.</p>
+    <p><strong>OPTIMISED DEPTH:</strong> The spacious, deep bowl minimizes water splatter and spillage, keeping the counter clean and dry.</p>
+    <p><strong>IMPACT RESISTANCE:</strong> The ceramic material is designed to withstand impact, reducing noise from water impact and ensuring a quieter bathroom experience.</p>
+    <p><strong>ANTI-STICK SURFACE:</strong> The wash basin's smooth surface prevents dirt and grime from sticking, making cleaning effortless and maintaining a pristine appearance.</p>
+  </div>
+  
+<div class="gh">
+  <h2>Top Reviews From India</h2>
+</div>
+<div class="review">
+  <div class="review-header">
+    <div class="avatar"></div>
+    <div>
+      <div class="reviewer-name">
+        <p>Abhik chattopadhyay</p></div>
+        <div class="rating">
+          &#9734; &#9734; &#9734; &#9734; <span class="empty-star">&#9734;</span>
+        </div>
+    </div>
+  </div>
+  <div class="review-body">
+    <p>Reviewed in India on 1 February 2025</p>
+    <p>Style Name: Hydra</p>
+    <p>A very cute little basin is it. And it perfectly fits my space. In the image that I’ve attached the product is just the basin and nothing else. Everything else was bought separately.</p>
+  </div>
+</div>
+
+<div class="review">
+  <div class="review-header">
+    <div class="avatar"></div>
+    <div>
+      <div class="reviewer-name">
+        <p>Sandeep</p></div>
+        <div class="rating">
+          &#9734; &#9734; &#9734; &#9734; <span class="empty-star">&#9734;</span>
+        </div>
+    </div>
+  </div>
+  <div class="review-body">
+    <p>Reviewed in India on 1 February 2025</p>
+    <p>Style Name:Hydra</p>
+    <p>A very cute little basin is it. And it perfectly fits my space. In the image that I’ve attached the product is just the basin and nothing else. Everything else was bought separately.</p>
+  </div>
+</div>
+
+<div class="review">
+  <div class="review-header">
+    <div class="avatar"></div>
+    <div>
+      <div class="reviewer-name">
+        <p>Adil Ansari</p></div>
+      <div class="rating">
+        &#9734; &#9734; &#9734; &#9734; <span class="empty-star">&#9734;</span>
+      </div>
+    </div>
+  </div>
+  <div class="review-body">
+    <p>Reviewed in India on 1 February 2025</p>
+    <p>Style Name: Hydra</p>
+    <p>A very cute little basin is it. And it perfectly fits my space. In the image that I’ve attached the product is just the basin and nothing else. Everything else was bought separately.</p>
+  </div>
+</div>
+
+<br><br>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section logo-section">
+      <img src="./images/image000.jpeg" alt="PK Hardware Logo" class="logo" />
+   
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact Address 1</h4>
+      <p>No: 32, Ohm sakthi nagar<br>
+      Guduvancherry<br>
+      Chennai 603202</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact Address 2</h4>
+      <p>No 82, Check post<br>
+      Velacherry<br>
+      Chennai 606002</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Information</h4>
+      <p><a href="#">Terms & Conditions</a></p>
+      <p><a href="#">Return Policy</a></p>
+      <p><a href="#">Privacy Policy</a></p>
+      <p><a href="#">Exchange Policy</a></p>
+    </div>
+
+    <div class="footer-section">
+      <h4>My Account</h4>
+      <p><a href="#">Login</a></p>
+      <p><a href="#">Order History</a></p>
+      <div class="social-icons">
+        <span>Follow Us on</span><br />
+        <a href="https://www.instagram.com/"><img src="./images/Instagram_icon.png.webp" alt="Instagram"></a>
+        <a href="https://www.facebook.com/"><img src="./images/facebook-logo-icon-free-png.webp" alt="Facebook"></a>
+        <a href="https://www.youtube.com/"><img src="./images/youtube-7949229_1280.webp" alt="YouTube"></a>
+        <a href="https://x.com/"><img src="./images/OIP.jpg" alt="Twitter"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p><a href="mailto:info@PKhardwares.com">info@PKhardwares.com</a></p>
+    <p>© 2025 PK Hardwares - V.1.0 - All rights reserved</p>
+  </div>
+</footer>
+<script>
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const cartCountEl = document.getElementById('cart-count');
+    if (cartCountEl) {
+      cartCountEl.textContent = totalCount;
+    }
+  }
+
+  updateCartCount();
+</script>
+
+
+<!-- Script Section -->
+<script>
+  function updateCartCount() {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const count = cartItems.reduce((total, item) => total + (item.quantity || 1), 0);
+    const cartCountEl = document.getElementById("cart-count");
+    if (cartCountEl) cartCountEl.textContent = count;
+  }
+
+  function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existing = cart.find(item => item.id === product.id);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      product.quantity = 1;
+      cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount(); // Update count immediately
+  }
+
+
+</script>
+</body>
+</html>
+
